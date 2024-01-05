@@ -20,6 +20,12 @@ variables:
   projectRoot: $(System.DefaultWorkingDirectory)
   # Environment name
   environmentName: 'test'
+  # terraform storage number
+  tfstatenumber: 'tfstate1718022452'
+  # terraform resource group
+  tfrg: 'Azuredevops'
+  # webapp name
+  application_type: 'project-qa'
 
 stages:
 #--------------------------------------------#  
@@ -46,9 +52,9 @@ stages:
         command: 'init'
         workingDirectory: '$(projectRoot)/terraform/environments/test'
         backendServiceArm: '$(azureServiceConnectionId)'
-        backendAzureRmResourceGroupName: ''
-        backendAzureRmStorageAccountName: ''
-        backendAzureRmContainerName: ''
+        backendAzureRmResourceGroupName: '$(tfrg)'
+        backendAzureRmStorageAccountName: '$(tfstatenumber)'
+        backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
 
     - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV3@3
