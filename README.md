@@ -167,10 +167,15 @@ variables:
 
 - Stress test
 ![stress](./img/stress_test.png)
+
+##### report
 ![stress](./img/jmeter_endurace_report.png)
 - Endurance test
 ![endurace](./img/endurace_test.png)
+
+##### report
 ![endurace](./img/jmeter_report.png)
+
 #### Functional UI testing selenium
 ![selenium](./img/selenium.png)
 
